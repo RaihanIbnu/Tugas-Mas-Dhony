@@ -1,0 +1,17 @@
+{
+  "name": "belajarapikuncie",
+  "version": "1.0.0",
+  "description": "Belajar Mocha Chai",
+  "main": "index.js",
+  "scripts": {
+    "jalan": "npx mocha tests/**/*.js"
+  },
+  "author": "RaihanIbnu",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "chai-json-schema": "^1.5.1",
+    "mocha": "^10.2.0",
+    "supertest": "^6.3.3"
+  }
+}
