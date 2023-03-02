@@ -75,7 +75,7 @@ describe('API GET USER LIST - API GET {{base_url}}/api/bootcamp/users dengan hoo
     });
 });
 
-describe.only('API Delete User List - API Delete {{base_url}}/api/bootcamp/users/{{userId}}', async () => {
+describe('API Delete User List - API Delete {{base_url}}/api/bootcamp/users/{{userId}}', async () => {
     it('Test apakah fungsi API Delete berjalan', async () => {
         const response = await api.deleteUser();
 
