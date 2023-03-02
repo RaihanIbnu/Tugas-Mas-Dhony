@@ -12,20 +12,20 @@ describe('API GET USER LIST - API GET {{base_url}}/api/bootcamp/users dengan hoo
     let idUser = '';
 
     before(async () => {
-        console.log('Only this test will run');
-        const response = await api.createUser('Raihan');
-        expect(response.status).to.equal(200); 
+        // console.log('Only this test will run');
+        let response = await api.createUser('Raihan');
+        expect(response.status).to.equal(200, 'Respone status is 200'); 
         
         idUser = response.body.id;
 
     })
 
     beforeEach(() => {
-        console.log('Will run before it');
+        // console.log('Will run before it');
     })
 
     afterEach(() => {
-        console.log('Will run after it');
+        // console.log('Will run after it');
     });
 
     it('Test apakah funsi API Get User list berjalan ditandai dengan data Raihan muncul', async () => {
@@ -36,13 +36,13 @@ describe('API GET USER LIST - API GET {{base_url}}/api/bootcamp/users dengan hoo
        });
 
 
-        expect(response.status).to.equal(200, 'Response is not 200');
+        expect(response.status).to.equal(400, 'Response is not 200');
         expect(filterResult.length).to.greaterThan(0, 'No data with name Raihan');
     });
 
     it('Test apakah funsi API Get User list berjalan dimana data user yang saya buat ada', async () => {
         // create user
-        const response = await api.createUser('Raihan');
+        let response = await api.createUser('Raihan');
         expect(response.status).to.equal(200); 
 
         const idUser = response.body.id;
@@ -65,7 +65,7 @@ describe('API GET USER LIST - API GET {{base_url}}/api/bootcamp/users dengan hoo
         const payload = dataTest.dataUser
         payload.name = " ";
         const response = await api.createUser(payload);
-        expect (response.status).to.equal(200,'Response is not 200');
+        expect (response.status).to.equal(400,'Response is not 200');
     });
     it('Test apakah funsi API Create User menggunakan variasi data', async () => {
         const payload = dataTest.dataUser
